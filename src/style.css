@@ -1,0 +1,86 @@
+:root {
+  /* Hauptfarben für die Praxis */
+  --primary-color: #2c6e8e;     /* Dunkles Blau - vertrauenswürdig */
+  --secondary-color: #7fb7d1;   /* Helles Blau - beruhigend */
+  --accent-color: #4a8b3f;      /* Grün - Gesundheit/Leben */
+  --text-color: #333333;        /* Dunkelgrau - gut lesbar */
+  --bg-color: #f5f7f9;          /* Helles Grau-Blau - clean */
+  
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Navigation Styling */
+.navbar {
+  background-color: white !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: var(--text-color) !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Überschriften */
+h1, h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 8px;
+}
+
+.card-title {
+  color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+  background-color: white !important;
+  color: var(--text-color);
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
