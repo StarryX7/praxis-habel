@@ -2,7 +2,9 @@
   <div id="app" class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
     <Navbar />
-    <router-view class="flex-grow-1" />
+
+    <!-- Seiteninhalt -->
+    <router-view class="flex-grow-1"></router-view>
 
     <!-- Footer -->
     <Footer />
@@ -10,36 +12,49 @@
 </template>
 
 <script lang="ts">
-import  Navbar  from './components/Navbar.vue';
+import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
-import FlyerInfo from './components/FlyerInfo.vue';
+
 export default {
   name: 'App',
   components: {
     Navbar,
     Footer,
-    FlyerInfo
-  }
+  },
 };
 </script>
 
 <style>
-html,
-body {
+/* Verhindert ungewolltes Scrollen */
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Kein horizontales Scrollen */
 }
 
+/* Hauptcontainer */
 #app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden; /* Falls ein Element über den Rand geht */
 }
 
-.therapiemethoden {
-  font-size: 1.2rem;
+/* Stellt sicher, dass der Hauptinhalt sich streckt */
+.router-view {
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
 }
 
-.therapie {
-  font-size: 24px;
+/* Footer bleibt am unteren Rand, ohne zusätzlichen Scroll */
+footer {
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+  width: 100%;
 }
+
 </style>
