@@ -1,5 +1,5 @@
 <template>
-    <main class="container my-4 flex-grow-1">
+    <main class="container mt-3">
         <h1 class="text-center">Reinald Habel</h1>
         <h2 class="text-center">Arzt für Integrative Medizin</h2>
         <div class="text-center">
@@ -27,3 +27,9 @@ export default {
     name: 'FlyerInfo'
 }
 </script>
+
+<style scoped>
+.card {
+    background-color: rgb(0, 183, 255);
+}
+</style>

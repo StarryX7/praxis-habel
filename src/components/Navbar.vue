@@ -27,7 +27,10 @@
             <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: 'about' }">Über uns</router-link>
+            <router-link class="nav-link" :to="{ name: 'about' }">Über mich</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" :to="{ name: 'posts' }">Beiträge</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{ name: 'services' }">Leistungen</router-link>
