@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
     <div class="container-fluid">
       <!-- Logo und Titel -->
       <router-link class="navbar-brand d-flex align-items-center" to="/">

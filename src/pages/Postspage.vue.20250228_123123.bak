@@ -30,29 +30,13 @@
 </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script>
 import PostComponent from "../components/PostComponent.vue";
 
 // Hier können weitere Komponenten importiert werden
 // import NewComponent from "../components/NewComponent.vue";
 
-// Typdefinitionen für die Komponente
-interface Source {
-  from: string;
-  to: string;
-}
-
-interface Post {
-  title?: string;
-  content: string;
-  sources?: Source[];
-  sourceList?: Source[];
-  category?: string;
-  date?: string;
-}
-
-export default defineComponent({
+export default {
   name: 'Postspage',
   components: {
     PostComponent,
@@ -99,26 +83,33 @@ export default defineComponent({
       },
       
       // Platzhalter für zukünftige Posts
-      additionalPosts: [] as Post[]
+      additionalPosts: [
+        // Hier können später weitere Posts hinzugefügt werden
+        // {
+        //   title: "Neuer Artikel",
+        //   content: "Inhalt des neuen Artikels...",
+        //   sourceList: [],
+        //   category: "Kategorie",
+        //   date: "Datum"
+        // }
+      ]
     };
   },
   methods: {
     // Methoden für zukünftige Funktionalität
-    loadMorePosts(): void {
+    loadMorePosts() {
       // Implementierung zum Laden weiterer Posts
     },
     
-    filterPostsByCategory(category: string): void {
+    filterPostsByCategory(category) {
       // Implementierung zum Filtern nach Kategorien
-      console.log(`Filtering by category: ${category}`);
-      // Hier kommt später die eigentliche Filterlogik hin
     }
   },
   mounted() {
     // Hier könnten Daten beim Laden der Komponente geladen werden
     // this.loadMorePosts();
   }
-});
+};
 </script>
 
 <style scoped>

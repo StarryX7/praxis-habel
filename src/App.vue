@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
-    <Navbar />
+    <Navbar/>
 
     <!-- Seiteninhalt -->
-    <router-view class="flex-grow-1"></router-view>
+    <router-view></router-view>
 
     <!-- Footer -->
     <Footer />

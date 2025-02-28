@@ -110,8 +110,6 @@ export default defineComponent({
     
     filterPostsByCategory(category: string): void {
       // Implementierung zum Filtern nach Kategorien
-      console.log(`Filtering by category: ${category}`);
-      // Hier kommt später die eigentliche Filterlogik hin
     }
   },
   mounted() {
