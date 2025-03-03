@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="d-flex flex-column min-vh-100">
+  <div id="app" class="d-flex flex-column">
     <!-- Navbar -->
     <Navbar/>
 
@@ -26,26 +26,23 @@ export default {
 
 <style>
 /* Verhindert ungewolltes Scrollen */
-html, body {
+/*html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Kein horizontales Scrollen */
-}
+  overflow-x: hidden; /* Kein horizontales Scrollen 
+}*/
 
 /* Hauptcontainer */
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden; /* Falls ein Element über den Rand geht */
+  /*overflow-x: hidden;*/ /* Falls ein Element über den Rand geht */
 }
 
 /* Stellt sicher, dass der Hauptinhalt sich streckt */
 .router-view {
-  flex-grow: 1;
   width: 100%;
-  overflow: hidden;
 }
 
 /* Footer bleibt am unteren Rand, ohne zusätzlichen Scroll */

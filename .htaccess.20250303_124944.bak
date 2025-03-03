@@ -1,11 +1,7 @@
-# .htaccess für Vue.js SPA-Routing mit HTTPS-Umleitung
+# .htaccess für Vue.js SPA-Routing
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  
-  # Umleitung auf HTTPS, falls nicht bereits HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
   # Wenn die Anfrage keine physische Datei oder ein Verzeichnis ist
   RewriteCond %{REQUEST_FILENAME} !-f

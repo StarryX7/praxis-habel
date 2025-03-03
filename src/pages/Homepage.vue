@@ -15,7 +15,7 @@ export default {
 </script>
 <style scoped>
 .logo-img {
-    width: 400px;
+    width: 180px;
     height: auto;
 
     /*img-fluid*/
