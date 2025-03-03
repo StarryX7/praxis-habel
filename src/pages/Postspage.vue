@@ -2,9 +2,34 @@
 <div class="container">
   <h1 class="text-center mb-4">Gesundheits-Blog</h1>
   
-  <div class="row justify-content-center">
-    <div class="col-md-8 mb-4">
-      <!-- Bestehender Post -->
+  <!-- Kategorie-Filter -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="category-filter d-flex flex-wrap justify-content-center">
+        <button 
+          v-for="(cat, index) in categories" 
+          :key="index" 
+          class="btn m-1" 
+          :class="selectedCategory === cat ? 'btn-primary' : 'btn-outline-primary'"
+          @click="filterByCategory(cat)"
+        >
+          {{ cat }}
+        </button>
+        <button 
+          class="btn m-1" 
+          :class="selectedCategory === null ? 'btn-primary' : 'btn-outline-primary'"
+          @click="filterByCategory(null)"
+        >
+          Alle anzeigen
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Artikel Grid -->
+  <div class="row">
+    <!-- Bestehender Post -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Gesundheit')">
       <PostComponent 
         title="Die Übersäuerung des Körpers macht krank!"
         :content="posts.acid.content"
@@ -13,63 +38,110 @@
         date="12. Februar 2025"
       />
     </div>
-  </div>
 
-  <div class="row justify-content-center" v-if="showAdditionalContent">
-    <div class="col-md-8 mb-4">
+    <!-- Präventiometer -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Gesundheitsvorsorge')">
       <PreventiometerComponent />
+    </div>
+
+    <!-- Alzheimer -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Gesundheit')">
+      <AlzheimerComponent />
+    </div>
+
+    <!-- Histamin-Intoleranz -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Ernährung & Gesundheit')">
+      <HistaminIntoleranceComponent />
+    </div>
+
+    <!-- Spermidin -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Gesundheit & Anti-Aging')">
+      <SpermidinComponent />
+    </div>
+
+    <!-- Weihrauch -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Naturheilkunde')">
+      <WeihrauschComponent />
+    </div>
+
+    <!-- ImuPro -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Diagnostik & Allergien')">
+      <ImuProComponent />
+    </div>
+
+    <!-- Ubiquinol -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Long-Covid & Herzgesundheit')">
+      <UbiquinolComponent />
+    </div>
+
+    <!-- Praxis-Info -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Praxisinformationen')">
+      <PraxisInfoComponent />
+    </div>
+
+    <!-- Vitamin D -->
+    <div class="col-lg-6 mb-4" v-if="showPost('Ernährung & Prävention')">
+      <VitaminDComponent />
     </div>
   </div>
 
-  <!-- Hier können weitere Komponenten hinzugefügt werden -->
-  <div class="row justify-content-center" v-if="showAdditionalContent">
-    <div class="col-md-8 mb-4" v-for="(post, index) in additionalPosts" :key="index">
-      <PostComponent 
-        :title="post.title"
-        :content="post.content"
-        :sourceList="post.sourceList || []"
-        :category="post.category"
-        :date="post.date"
-      />
+  <!-- Keine Ergebnisse Meldung -->
+  <div class="row" v-if="filteredPostsCount === 0">
+    <div class="col-12 text-center py-5">
+      <h4>Keine Beiträge in dieser Kategorie gefunden.</h4>
+      <button class="btn btn-primary mt-3" @click="filterByCategory(null)">
+        Alle Beiträge anzeigen
+      </button>
     </div>
   </div>
 </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script>
 import PostComponent from "../components/PostComponent.vue";
 import PreventiometerComponent from "../components/PreventiometerComponent.vue";
+import AlzheimerComponent from "../components/AlzheimerComponent.vue";
+import HistaminIntoleranceComponent from "../components/HistaminIntoleranceComponent.vue";
+import SpermidinComponent from "../components/SpermidinComponent.vue";
+import WeihrauschComponent from "../components/WeihrauschComponent.vue";
+import ImuProComponent from "../components/ImuProComponent.vue";
+import UbiquinolComponent from "../components/UbiquinolComponent.vue";
+import PraxisInfoComponent from "../components/PraxisInfoComponent.vue";
+import VitaminDComponent from "../components/VitaminDComponent.vue";
 
-// Hier können weitere Komponenten importiert werden
-// import NewComponent from "../components/NewComponent.vue";
-
-// Typdefinitionen für die Komponente
-interface Source {
-  from: string;
-  to: string;
-}
-
-interface Post {
-  title?: string;
-  content: string;
-  sources?: Source[];
-  sourceList?: Source[];
-  category?: string;
-  date?: string;
-}
-
-export default defineComponent({
+export default {
   name: 'Postspage',
   components: {
     PostComponent,
     PreventiometerComponent,
-    // Hier können weitere Komponenten registriert werden
-    // NewComponent,
+    AlzheimerComponent,
+    HistaminIntoleranceComponent,
+    SpermidinComponent,
+    WeihrauschComponent,
+    ImuProComponent,
+    UbiquinolComponent,
+    PraxisInfoComponent,
+    VitaminDComponent
   },
   data() {
     return {
-      // Flag für zukünftige Inhalte
+      // Kategoriefilter
+      selectedCategory: null,
+      
+      // Kategorien für die Filter
+      categories: [
+        "Gesundheit",
+        "Gesundheitsvorsorge",
+        "Ernährung & Gesundheit",
+        "Gesundheit & Anti-Aging",
+        "Naturheilkunde",
+        "Diagnostik & Allergien",
+        "Long-Covid & Herzgesundheit",
+        "Praxisinformationen",
+        "Ernährung & Prävention"
+      ],
+      
+      // Flag für Inhalte
       showAdditionalContent: true,
       
       // Bestehender Post in eine strukturierte Form gebracht
@@ -106,8 +178,7 @@ export default defineComponent({
         }
       },
       
-      // Platzhalter für zukünftige Posts
-      // Zusätzliche Posts
+      // Zusätzliche Posts für zukünftige Erweiterungen
       additionalPosts: [
         {
           title: "Präventiometer: Umfassende Gesundheitsvorsorge",
@@ -115,32 +186,56 @@ export default defineComponent({
           category: "Gesundheitsvorsorge",
           date: "3. März 2025"
         }
-      ] as Post[]
+      ]
     };
   },
-  methods: {
-    // Methoden für zukünftige Funktionalität
-    loadMorePosts(): void {
-      // Implementierung zum Laden weiterer Posts
-    },
-    
-    filterPostsByCategory(category: string): void {
-      // Implementierung zum Filtern nach Kategorien
-      console.log(`Filtering by category: ${category}`);
-      // Hier kommt später die eigentliche Filterlogik hin
+  computed: {
+    filteredPostsCount() {
+      if (!this.selectedCategory) return 10; // Anzahl aller Komponenten
+      
+      let count = 0;
+      if (this.selectedCategory === "Gesundheit") count += 2; // Säure + Alzheimer
+      if (this.selectedCategory === "Gesundheitsvorsorge") count += 1; // Präventiometer
+      if (this.selectedCategory === "Ernährung & Gesundheit") count += 1; // Histamin
+      if (this.selectedCategory === "Gesundheit & Anti-Aging") count += 1; // Spermidin
+      if (this.selectedCategory === "Naturheilkunde") count += 1; // Weihrauch
+      if (this.selectedCategory === "Diagnostik & Allergien") count += 1; // ImuPro
+      if (this.selectedCategory === "Long-Covid & Herzgesundheit") count += 1; // Ubiquinol
+      if (this.selectedCategory === "Praxisinformationen") count += 1; // Praxis-Info
+      if (this.selectedCategory === "Ernährung & Prävention") count += 1; // Vitamin D
+      
+      return count;
     }
   },
-  mounted() {
-    // Hier könnten Daten beim Laden der Komponente geladen werden
-    // this.loadMorePosts();
+  methods: {
+    // Filter nach Kategorien
+    filterByCategory(category) {
+      this.selectedCategory = category;
+    },
+    
+    // Hilfsmethode zum Anzeigen von Posts basierend auf Kategorie
+    showPost(category) {
+      return this.selectedCategory === null || this.selectedCategory === category;
+    }
   }
-});
+};
 </script>
 
 <style scoped>
-/* Hier können komponentenspezifische Stile hinzugefügt werden */
+/* Komponenten-spezifische Stile */
 .container {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.category-filter {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .category-filter .btn {
+    font-size: 0.9rem;
+    padding: 0.375rem 0.5rem;
+  }
 }
 </style>

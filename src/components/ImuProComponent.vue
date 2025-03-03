@@ -1,0 +1,133 @@
+<template>
+  <div class="card shadow-lg rounded-4">
+    <div class="card-body">
+      <h3 class="card-title text-primary">{{ title }}</h3>
+      <p class="text-muted">Kategorie: {{ category }} | Veröffentlicht am: {{ date }}</p>
+      
+      <!-- Hauptinhalt -->
+      <div class="imupro-content">
+        <!-- Einleitung und Fazit -->
+        <div class="mb-4">
+          <h4>Fazit:</h4>
+          <p>{{ introduction }}</p>
+          <p>{{ question }}</p>
+        </div>
+
+        <!-- Wissenschaftliche Diskussion -->
+        <div v-if="showDetails" class="mb-4">
+          <p>{{ scientificDiscussion }}</p>
+          <p>{{ therapeutConfirmation }}</p>
+          <p>{{ positiveTest }}</p>
+          <p>{{ selfObservation }}</p>
+          <p>{{ otherPatients }}</p>
+          <p>{{ prevention }}</p>
+          <p>{{ conclusion }}</p>
+        </div>
+
+        <!-- ImuPro Complete -->
+        <div class="mb-4">
+          <h4>ImuPro Complete</h4>
+          <p>{{ imuproDescription }}</p>
+          <p>{{ bloodRequirements }}</p>
+          <p>Sie erhalten mit dem ImuPro-Ergebnis ausführliche Unterlagen, wie die Ernährungsumstellung zu erfolgen hat:</p>
+          
+          <ul class="list-unstyled mt-3">
+            <li v-for="(document, index) in documents" :key="'doc-'+index" class="mb-2">
+              {{ document }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Aktionsschaltflächen -->
+      <div class="mt-4 d-flex justify-content-between">
+        <button class="btn btn-outline-primary">Teilen</button>
+        <button class="btn btn-outline-success" @click="toggleDetails">
+          {{ showDetails ? 'Weniger anzeigen' : 'Mehr Details anzeigen' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: "ImuPro Complete - Nahrungsmittel-Allergien vom Typ III"
+    },
+    category: {
+      type: String,
+      default: "Diagnostik & Allergien"
+    },
+    date: {
+      type: String,
+      default: "3. März 2025"
+    }
+  },
+  data() {
+    return {
+      showDetails: false,
+      introduction: "Diese Informationen über die möglichen Zusammenhänge zwischen Nahrungsmittel-Allergien vom Typ III und chronischen Erkrankungen haben wir Ihnen angeboten, damit Ihr Therapeut mit Ihnen im Gespräch besser entscheiden kann, ob eine ausführliche Austestung von Nahrungsmitteln mit ImuPro Complete für Sie sinnvoll ist.",
+      question: "Sie werden sich vielleicht fragen, warum wir nur über die möglichen Zusammenhänge sprechen.",
+      scientificDiscussion: "Die Rolle von IgG-Antikörpern gegen Nahrungsmittel bei der Entstehung chronischer Entzündungsprozesse wird derzeit wissenschaftlich diskutiert. Allerdings ist nach den Maßstäben der Schulmedizin der Status „wissenschaftlich gesichert\" noch nicht erreicht.",
+      therapeutConfirmation: "Die Bestätigung des Verdachts, dass ein Zusammenhang zwischen einer Nahrungsmittel-Allergie Typ III und Ihren Beschwerden vorliegt, kann nur Ihr Therapeut treffen – und auch nur dann, wenn Sie konsequent die Ernährungsempfehlungen des ImuPro Complete-Konzeptes befolgen und so feststellen können, ob Ihre Beschwerden abklingen.",
+      positiveTest: "Dass der Befund Ihres ImuPro Starter-Tests positiv ist, bestätigt zunächst den Verdacht Ihres Therapeuten, dass Nahrungsmittel eine Rolle bei Ihrer Erkrankung spielen könnten.",
+      selfObservation: "Wenn Sie selbst schon festgestellt haben, dass sich Symptome abhängig von der Ernährung verbessern bzw. verschlechtern, ist dies ein weiterer Anhaltspunkt dafür, dass bei Ihnen eine Nahrungsmittel-Allergie Typ III vorliegen könnte.",
+      otherPatients: "Die Ergebnisse anderer Patienten mit ähnlichen Problemen haben bewusst aufgezeigt, dass Sie auch das Risiko eines Misserfolgs einschätzen können. Wie viele andere Therapien auch, kann ImuPro Complete keine hundertprozentigen Erfolge garantieren. Die uns vorliegenden Rückmeldungen, erfasst bei mehr als 1000 Patienten, zeigen jedoch sehr oft, dass die Vorgaben konsequent umgesetzt wurden und dass die Ernährungsumstellung auch positiv auf das Allgemeinbefinden auswirkte. Die meisten berichten, dass sie sich nicht mehr müde fühlen und leistungsfähiger werden.",
+      prevention: "Auch im Sinne einer Prävention ist die Ernährungsumstellung zu empfehlen. Es ist nicht sinnvoll, übermäßige Mengen eines Nahrungsmittels zu verzehren, gegen das der Körper Entzündungsprozesse einleitet. Selbst wenn dadurch heute noch keine gesundheitlichen Auswirkungen zu beobachten sind, könnte dies in ein paar Jahren der Fall sein.",
+      conclusion: "Wir sind der Überzeugung, dass es sich bei ImuPro Complete um eine gute Investition in die eigene Gesundheit handelt. Die Entscheidung müssen jedoch Sie selbst gemeinsam mit Ihrem Therapeuten treffen.",
+      imuproDescription: "ImuPro Complete ist ein ELISA-Verfahren (Enzyme Linked Immunosorbant Assay), mit dem IgG-Antikörper gegen 270 Nahrungsmittel, Farb- und Konservierungsstoffe nachgewiesen werden können.",
+      bloodRequirements: "Benötigt werden ca. 5 ml Vollblut. Das Blut für den ImuPro Starter-Test wird 4 Wochen aufbewahrt, sodass in dieser Zeit keine erneute Blutentnahme für ImuPro Complete erforderlich ist.",
+      documents: [
+        "Ihr Befund auf erhöhte spezifische IgG-Antikörper-Spiegel gegen 270 Nahrungsmittel",
+        "Ihre persönlichen Ernährungsempfehlungen, mit:",
+        "Ausführlichen Erklärungen und Hilfestellungen zum ImuPro-Ernährungskonzept",
+        "Nützlichen Hinweisen zu möglicherweise symptomauslösenden Nahrungsmitteln",
+        "Ihr individuelles Rezeptbuch mit vielen leckeren Gerichten – abgestimmt auf Ihren persönlichen Befund",
+        "Kostenlose telefonische Ernährungsberatung"
+      ]
+    };
+  },
+  methods: {
+    toggleDetails() {
+      this.showDetails = !this.showDetails;
+    }
+  }
+};
+</script>
+
+<style scoped>
+.card {
+  padding: 20px;
+}
+
+h3, h4 {
+  font-weight: bold;
+}
+
+h3 {
+  margin-bottom: 1rem;
+}
+
+h4 {
+  color: #495057;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+</style>
