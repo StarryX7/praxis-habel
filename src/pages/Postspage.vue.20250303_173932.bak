@@ -15,12 +15,6 @@
     </div>
   </div>
 
-  <div class="row justify-content-center" v-if="showAdditionalContent">
-    <div class="col-md-8 mb-4">
-      <PreventiometerComponent />
-    </div>
-  </div>
-
   <!-- Hier können weitere Komponenten hinzugefügt werden -->
   <div class="row justify-content-center" v-if="showAdditionalContent">
     <div class="col-md-8 mb-4" v-for="(post, index) in additionalPosts" :key="index">
