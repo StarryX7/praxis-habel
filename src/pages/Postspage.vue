@@ -74,11 +74,6 @@
       <UbiquinolComponent />
     </div>
 
-    <!-- Praxis-Info -->
-    <div class="col-lg-6 mb-4" v-if="showPost('Praxisinformationen')">
-      <PraxisInfoComponent />
-    </div>
-
     <!-- Vitamin D -->
     <div class="col-lg-6 mb-4" v-if="showPost('Ernährung & Prävention')">
       <VitaminDComponent />
@@ -106,7 +101,6 @@ import SpermidinComponent from "../components/SpermidinComponent.vue";
 import WeihrauschComponent from "../components/WeihrauschComponent.vue";
 import ImuProComponent from "../components/ImuProComponent.vue";
 import UbiquinolComponent from "../components/UbiquinolComponent.vue";
-import PraxisInfoComponent from "../components/PraxisInfoComponent.vue";
 import VitaminDComponent from "../components/VitaminDComponent.vue";
 
 export default {
@@ -120,7 +114,6 @@ export default {
     WeihrauschComponent,
     ImuProComponent,
     UbiquinolComponent,
-    PraxisInfoComponent,
     VitaminDComponent
   },
   data() {
@@ -137,7 +130,6 @@ export default {
         "Naturheilkunde",
         "Diagnostik & Allergien",
         "Long-Covid & Herzgesundheit",
-        "Praxisinformationen",
         "Ernährung & Prävention"
       ],
       
@@ -191,7 +183,7 @@ export default {
   },
   computed: {
     filteredPostsCount() {
-      if (!this.selectedCategory) return 10; // Anzahl aller Komponenten
+      if (!this.selectedCategory) return 9; // Anzahl aller Komponenten ohne PraxisInfo
       
       let count = 0;
       if (this.selectedCategory === "Gesundheit") count += 2; // Säure + Alzheimer
@@ -201,7 +193,6 @@ export default {
       if (this.selectedCategory === "Naturheilkunde") count += 1; // Weihrauch
       if (this.selectedCategory === "Diagnostik & Allergien") count += 1; // ImuPro
       if (this.selectedCategory === "Long-Covid & Herzgesundheit") count += 1; // Ubiquinol
-      if (this.selectedCategory === "Praxisinformationen") count += 1; // Praxis-Info
       if (this.selectedCategory === "Ernährung & Prävention") count += 1; // Vitamin D
       
       return count;
