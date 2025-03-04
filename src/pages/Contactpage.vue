@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <h1 class="text-center mb-4">Kontakt</h1>
-    
+
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="card shadow-lg rounded-4">
           <div class="card-body">
             <div class="contact-info p-4">
               <h3 class="text-primary mb-4">Reinald Habel – Arzt für Integrative Medizin</h3>
-              
+
               <div class="row mb-4">
                 <div class="col-md-6">
                   <h4>Adresse</h4>
@@ -19,7 +19,7 @@
                   <p>Privat und Privatkassen</p>
                 </div>
               </div>
-              
+
               <div class="row mb-4">
                 <div class="col-md-6">
                   <h4>Telefon</h4>
@@ -30,7 +30,7 @@
                   <p><a href="mailto:habelmed@aol.com" class="text-decoration-none">✉️ habelmed@aol.com</a></p>
                 </div>
               </div>
-              
+
               <div class="row mt-5">
                 <div class="col-12">
                   <h4>Öffnungszeiten</h4>
@@ -38,10 +38,6 @@
                     <tbody>
                       <tr>
                         <td>Montag - Freitag</td>
-                        <td>09:00 - 18:00 Uhr</td>
-                      </tr>
-                      <tr>
-                        <td>Samstag</td>
                         <td>Nach Vereinbarung</td>
                       </tr>
                       <tr>
@@ -53,7 +49,7 @@
                   <p class="text-muted mt-2"><small>Bitte vereinbaren Sie einen Termin.</small></p>
                 </div>
               </div>
-              
+
               <!-- Karte Platzhalter - hier könnte später eine echte Karte eingefügt werden -->
               <div class="row mt-4">
                 <div class="col-12">
@@ -82,7 +78,8 @@ export default {
   padding-bottom: 2rem;
 }
 
-h3, h4 {
+h3,
+h4 {
   font-weight: bold;
 }
 
@@ -112,11 +109,11 @@ h4 {
   .card {
     padding: 15px;
   }
-  
+
   h3 {
     font-size: 1.5rem;
   }
-  
+
   h4 {
     font-size: 1.25rem;
   }

@@ -4,7 +4,7 @@
         <h2 class="text-center">Arzt für Integrative Medizin</h2>
         <div class="text-center">
             <p>Bauernstraße 36, 31275 Lehrte</p>
-            <p>Telefon: 05175-592000</p>
+            <p>Telefon: 0175 52 68 493</p>
             <p>Email: info@praxis-habel.de</p>
         </div>
         <div class="card my-4 fs-3">
