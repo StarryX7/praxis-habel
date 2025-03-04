@@ -4,6 +4,7 @@ import Aboutpage from '../pages/Aboutpage.vue'
 import Servicespage from '../pages/Servicespage.vue'
 import Contactpage from '../pages/Contactpage.vue'
 import Postspage from '../pages/Postspage.vue'
+import Impressum from '../pages/Impressum.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: Contactpage
+    },
+    {
+      path:  '/impressum',
+      name: 'impressum',
+      component: Impressum
     }
   ]
 })
