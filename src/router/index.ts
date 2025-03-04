@@ -5,7 +5,7 @@ import Servicespage from '../pages/Servicespage.vue'
 import Contactpage from '../pages/Contactpage.vue'
 import Postspage from '../pages/Postspage.vue'
 import Impressum from '../pages/Impressum.vue'
-
+import Datenschutz from '../pages/Datenschutz.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -35,11 +35,15 @@ const router = createRouter({
       component: Contactpage
     },
     {
-      path:  '/impressum',
+      path: '/impressum',
       name: 'impressum',
       component: Impressum
+    },
+    {
+      path: '/datenschutz',
+      name: 'datenschutz', 
+      component: Datenschutz
     }
   ]
 })
-
 export default router
