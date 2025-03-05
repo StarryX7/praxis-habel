@@ -33,7 +33,6 @@
 
       <!-- Aktionsschaltflächen -->
       <div class="mt-4 d-flex justify-content-between">
-        <button class="btn btn-outline-primary">Teilen</button>
         <button class="btn btn-outline-success">Mehr erfahren</button>
       </div>
     </div>

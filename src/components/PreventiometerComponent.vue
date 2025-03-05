@@ -3,7 +3,7 @@
     <div class="card-body">
       <h3 class="card-title text-primary">{{ title }}</h3>
       <p class="text-muted">Kategorie: {{ category }} | Veröffentlicht am: {{ date }}</p>
-      
+
       <!-- Einleitung -->
       <div class="mb-4">
         <h4>{{ personName }}</h4>
@@ -14,7 +14,7 @@
       <div class="mb-4">
         <h4>Untersuchungsprozess und Messungen</h4>
         <ul class="list-unstyled">
-          <li v-for="(item, index) in processSteps" :key="'process-'+index" class="mb-2">
+          <li v-for="(item, index) in processSteps" :key="'process-' + index" class="mb-2">
             {{ item }}
           </li>
         </ul>
@@ -24,7 +24,7 @@
       <div class="mb-4">
         <h4>Weitere Tests im Programm</h4>
         <ul class="list-unstyled">
-          <li v-for="(item, index) in additionalTests" :key="'test-'+index" class="mb-2">
+          <li v-for="(item, index) in additionalTests" :key="'test-' + index" class="mb-2">
             {{ item }}
           </li>
         </ul>
@@ -40,7 +40,7 @@
       <div class="mb-4">
         <h4>Zusätzliche Angebote</h4>
         <ul class="list-unstyled">
-          <li v-for="(item, index) in additionalServices" :key="'service-'+index" class="mb-2">
+          <li v-for="(item, index) in additionalServices" :key="'service-' + index" class="mb-2">
             {{ item }}
           </li>
         </ul>
@@ -51,15 +51,10 @@
       <div class="mb-4">
         <h4>Leistungsspektrum eines Präventiometers</h4>
         <ul class="list-group mt-3">
-          <li v-for="(item, index) in serviceSpectrum" :key="'spectrum-'+index" class="list-group-item">
+          <li v-for="(item, index) in serviceSpectrum" :key="'spectrum-' + index" class="list-group-item">
             <span class="text-success me-2">✅</span> {{ item }}
           </li>
         </ul>
-      </div>
-
-      <div class="mt-4 d-flex justify-content-between">
-        <button class="btn btn-outline-primary">Teilen</button>
-        <button class="btn btn-outline-success">Liken</button>
       </div>
     </div>
   </div>
@@ -148,14 +143,18 @@ export default {
 .card {
   padding: 20px;
 }
-h3, h4 {
+
+h3,
+h4 {
   font-weight: bold;
 }
+
 h4 {
   color: #495057;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .list-group-item {
   border-left: none;
   border-right: none;

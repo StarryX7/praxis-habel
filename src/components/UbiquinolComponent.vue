@@ -3,23 +3,23 @@
     <div class="card-body">
       <h3 class="card-title text-primary">{{ title }}</h3>
       <p class="text-muted">Kategorie: {{ category }} | Veröffentlicht am: {{ date }}</p>
-      
+
       <!-- Hauptinhalt -->
       <div class="ubiquinol-content">
         <!-- Long-Covid-Herz -->
         <div class="mb-4">
           <h4>Long-Covid-Herz</h4>
           <p>{{ longCovidIntro }}</p>
-          
+
           <div class="statistics mb-3">
             <p>{{ statisticsText }}</p>
             <ul class="list-unstyled">
-              <li v-for="(symptom, index) in symptoms" :key="'symptom-'+index" class="mb-2">
+              <li v-for="(symptom, index) in symptoms" :key="'symptom-' + index" class="mb-2">
                 {{ symptom }}
               </li>
             </ul>
           </div>
-          
+
           <p>{{ workImpact }}</p>
         </div>
 
@@ -34,16 +34,16 @@
         <div class="mb-4">
           <h4>Wissenschaftliche Erkenntnisse zu Q10</h4>
           <p>{{ scientificFindings }}</p>
-          
+
           <div class="study-results mt-3">
             <p>{{ studyIntro }}</p>
             <ul class="list-unstyled">
-              <li v-for="(result, index) in studyResults" :key="'result-'+index" class="mb-2">
+              <li v-for="(result, index) in studyResults" :key="'result-' + index" class="mb-2">
                 {{ result }}
               </li>
             </ul>
           </div>
-          
+
           <p>{{ nyhaConfirmation }}</p>
         </div>
 
@@ -60,22 +60,20 @@
           <h4>Empfohlene Dosierung und Angebot</h4>
           <p>{{ dosageOffer }}</p>
           <p>{{ optimalSupply }}</p>
-          
+
           <div class="scientific-sources mt-4">
             <h5>Zusätzliche wissenschaftliche Quellen:</h5>
-            <p>{{ nyhaExplanation }}</p>
-            <ul class="list-unstyled small">
-              <li v-for="(source, index) in scientificSources" :key="'source-'+index" class="mb-2">
-                {{ source }}
-              </li>
-            </ul>
+            <div class="mt-4 d-flex justify-content-end">
+              <button class="btn btn-outline-success" @click="toggleDetails">
+                {{ showDetails ? 'Weniger anzeigen' : 'Mehr Details anzeigen' }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Aktionsschaltflächen -->
       <div class="mt-4 d-flex justify-content-between">
-        <button class="btn btn-outline-primary">Teilen</button>
         <button class="btn btn-outline-success" @click="toggleMoreInfo">
           {{ showMoreInfo ? 'Weniger anzeigen' : 'Mehr Informationen' }}
         </button>
@@ -145,7 +143,9 @@ export default {
   padding: 20px;
 }
 
-h3, h4, h5 {
+h3,
+h4,
+h5 {
   font-weight: bold;
 }
 
@@ -164,7 +164,8 @@ h5 {
   margin-top: 1rem;
 }
 
-.statistics, .study-results {
+.statistics,
+.study-results {
   background-color: #f8f9fa;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -179,11 +180,11 @@ h5 {
   .card {
     padding: 15px;
   }
-  
+
   h3 {
     font-size: 1.5rem;
   }
-  
+
   h4 {
     font-size: 1.25rem;
   }

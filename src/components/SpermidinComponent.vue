@@ -29,7 +29,6 @@
 
       <!-- Aktionsschaltflächen -->
       <div class="mt-4 d-flex justify-content-between">
-        <button class="btn btn-outline-primary">Teilen</button>
         <button class="btn btn-outline-success" @click="toggleMoreInfo">
           {{ showMoreInfo ? 'Weniger anzeigen' : 'Mehr zu Spermidin' }}
         </button>

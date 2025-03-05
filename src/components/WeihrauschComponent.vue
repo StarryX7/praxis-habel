@@ -3,12 +3,12 @@
     <div class="card-body">
       <h3 class="card-title text-primary">{{ title }}</h3>
       <p class="text-muted">Kategorie: {{ category }} | Veröffentlicht am: {{ date }}</p>
-      
+
       <!-- Inhaltsverzeichnis -->
       <div class="table-of-contents mb-4">
         <h4>Inhaltsverzeichnis</h4>
         <ol class="toc-list">
-          <li v-for="(section, index) in tableOfContents" :key="'toc-'+index">
+          <li v-for="(section, index) in tableOfContents" :key="'toc-' + index">
             <a href="#" @click.prevent="scrollToSection(section.id)">{{ section.title }}</a>
           </li>
         </ol>
@@ -24,14 +24,14 @@
         <!-- Weihrauch als Kulturgut -->
         <div id="culture" class="mb-4">
           <h4>Weihrauch als Kulturgut</h4>
-          
+
           <h5>In Religion ...</h5>
           <p>{{ cultureReligion }}</p>
-          
+
           <h5>Weihrauch in der traditionellen Medizin</h5>
           <p>{{ cultureTraditionalMedicine }}</p>
           <ul class="list-unstyled">
-            <li v-for="(use, index) in traditionalUses" :key="'use-'+index" class="mb-1">
+            <li v-for="(use, index) in traditionalUses" :key="'use-' + index" class="mb-1">
               {{ use }}
             </li>
           </ul>
@@ -62,9 +62,7 @@
         </div>
       </div>
 
-      <!-- Aktionsschaltflächen -->
-      <div class="mt-4 d-flex justify-content-between">
-        <button class="btn btn-outline-primary">Teilen</button>
+      <div class="mt-4 d-flex justify-content-end">
         <button class="btn btn-outline-success" @click="toggleDetails">
           {{ showDetails ? 'Weniger anzeigen' : 'Mehr Details anzeigen' }}
         </button>
@@ -133,7 +131,9 @@ export default {
   padding: 20px;
 }
 
-h3, h4, h5 {
+h3,
+h4,
+h5 {
   font-weight: bold;
 }
 
@@ -177,11 +177,11 @@ h5 {
   .card {
     padding: 15px;
   }
-  
+
   h3 {
     font-size: 1.5rem;
   }
-  
+
   h4 {
     font-size: 1.25rem;
   }
