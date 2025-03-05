@@ -50,13 +50,6 @@
           <p>{{ conclusion }}</p>
         </div>
       </div>
-
-      <!-- Aktionsschaltflächen -->
-      <div class="mt-4 d-flex justify-content-between">
-        <button class="btn btn-outline-success" @click="toggleDetails">
-          {{ showDetails ? 'Weniger anzeigen' : 'Mehr Details anzeigen' }}
-        </button>
-      </div>
     </div>
   </div>
 </template>
@@ -87,7 +80,6 @@ export default {
   },
   data() {
     return {
-      showDetails: false,
       affectedAreas: [
         {
           title: "Haut",
@@ -165,11 +157,6 @@ export default {
         }
       ]
     };
-  },
-  methods: {
-    toggleDetails() {
-      this.showDetails = !this.showDetails;
-    }
   }
 };
 </script>
