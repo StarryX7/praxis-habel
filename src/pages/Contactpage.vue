@@ -1,8 +1,8 @@
 vue
 <template>
   <div class="container">
-    <h1 class="text-center mb-4">Kontakt</h1>
-    <div class="row justify-content-center">
+    <h1 class="text-center mb-5">Kontakt</h1>
+    <div class="row justify-content-center mb-2">
       <div class="col-lg-8">
         <div class="card shadow-lg rounded-4">
           <div class="card-body">
@@ -43,7 +43,7 @@ vue
                       </tr>
                     </tbody>
                   </table>
-                  <p class="text-muted mt-2"><small>Bitte vereinbaren Sie einen Termin.</small></p>
+                  <p class="text-muted mt-5"><small>Bitte vereinbaren Sie einen Termin.</small></p>
                 </div>
               </div>
             </div>
