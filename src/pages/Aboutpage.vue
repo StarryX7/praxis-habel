@@ -6,7 +6,7 @@
           <div class="profile-container">
             <img src="../assets/Habel.jpg" alt="Dr. Reinald Habel" class="profile-image img-fluid rounded shadow">
             <div class="doctor-info mt-4 p-3 bg-light rounded shadow-sm">
-              <h3 class="text-center">Dr. med. Reinald Habel</h3>
+              <h3 class="text-center">Reinald Habel</h3>
               <p class="mb-2"><i class="bi bi-calendar3"></i> Geboren am 20.02.1950</p>
               <p class="mb-2"><i class="bi bi-geo-alt"></i> Geburtsort: Bayreuth</p>
               <p class="mb-0"><i class="bi bi-hospital"></i> Facharzt für Naturheilverfahren</p>
