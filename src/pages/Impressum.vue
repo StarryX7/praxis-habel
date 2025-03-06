@@ -17,7 +17,7 @@
           Reinhald Habel<br>
           Telefon: 033087 - 90321<br>
           Fax: 033087 - 90322<br>
-          E-Mail: info@praxis-habel.de
+          E-Mail: habelmed@aol.com
         </p>
         
         <h2 class="mt-4">Berufsbezeichnung und berufsrechtliche Regelungen:</h2>
