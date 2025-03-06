@@ -5,15 +5,16 @@
         
         <h2 class="mt-4">Angaben gemäß § 5 TMG:</h2>
         <p>
-          Dr. med. Sabine Habel<br>
-          Fachärztin für Allgemeinmedizin<br>
-          Praxis Dr. med. Sabine Habel<br>
+          Reinhald Habel<br>
+          Facharzt für Allgemeinmedizin<br>
+          Praxis Reinhald Habel<br>
           Dorfstraße 41<br>
           16792 Zehdenick OT Mildenberg
         </p>
         
         <h2 class="mt-4">Kontakt:</h2>
         <p>
+          Reinhald Habel<br>
           Telefon: 033087 - 90321<br>
           Fax: 033087 - 90322<br>
           E-Mail: info@praxis-habel.de
@@ -21,7 +22,7 @@
         
         <h2 class="mt-4">Berufsbezeichnung und berufsrechtliche Regelungen:</h2>
         <p>
-          Berufsbezeichnung: Ärztin<br>
+          Berufsbezeichnung: Arzt<br>
           Zuständige Kammer: Landesärztekammer Brandenburg<br>
           Verliehen in: Bundesrepublik Deutschland
         </p>
