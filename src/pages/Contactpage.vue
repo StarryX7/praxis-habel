@@ -21,11 +21,12 @@ vue
               <div class="row mb-4">
                 <div class="col-md-6">
                   <h4>Telefon</h4>
-                  <p><a href="tel:017552684932" class="text-decoration-none">📞 0175 52 68 493</a></p>
+                  <p><a href="tel:01755628493" class="text-decoration-none">📞 0175 5628493</a></p>
                 </div>
                 <div class="col-md-6">
                   <h4>E-Mail</h4>
-                  <p><a href="mailto:habelmed@aol.com" class="text-decoration-none">✉️ habelmed@aol.com</a></p>
+                  <p><a href="mailto:habelmed@aol.com" class="text-decoration-none">✉️ info@praxis-habel.de
+                    </a></p>
                 </div>
               </div>
               <div class="row mt-5">
@@ -63,27 +64,34 @@ export default {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
 h3,
 h4 {
   font-weight: bold;
 }
+
 h4 {
   color: #495057;
 }
+
 .contact-info h4 {
   margin-bottom: 0.5rem;
   color: #007bff;
 }
+
 .card {
   border: none;
 }
+
 @media (max-width: 768px) {
   .card {
     padding: 15px;
   }
+
   h3 {
     font-size: 1.5rem;
   }
+
   h4 {
     font-size: 1.25rem;
   }

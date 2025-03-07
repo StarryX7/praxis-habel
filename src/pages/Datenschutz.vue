@@ -38,9 +38,9 @@ vue
         Reinald Habel<br>
         Arzt für Integrative Medizin<br>
         Bauernstraße 36<br>
-        31275 Immensen (Lehrte)<br><br>
-        Telefon: 0175 52 68 493<br>
-        E-Mail: habelmed@aol.com
+        31275 Lehrte/Immensen<br><br>
+        Telefon: 0175 5628493<br>
+        E-Mail: info@praxis-habel.de
       </p>
       <h2 class="mt-4">3. Datenerfassung auf dieser Website</h2>
       <h3>Cookies</h3>
